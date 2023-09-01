@@ -12,6 +12,7 @@ void imprimeMedias(float notas[])
 void recebeNotas()
 {
 	int i, j;
+	float aux=0;
 	float matAlunos[4][4];
 	float vetNotas[4];
 
@@ -19,11 +20,13 @@ void recebeNotas()
 	for(i = 0; i < 4; i++){
 		for(j = 0; j < 4; j++){
 			scanf("%f", &matAlunos[i][j]);
-			vetNotas[i] = matAlunos[i][j] /4.0;
+			aux += matAlunos[i][j];
 		}
-		printf("Digite 4 notas de Aluno i+2\n");
+		vetNotas[i] = aux / 4.0;
+		printf("Digite 4 notas de Aluno %d\n", i+2);
+		aux = 0;
 	}
-	imprimiMedias(vetNotas);
+	imprimeMedias(vetNotas);
 }
 
 
